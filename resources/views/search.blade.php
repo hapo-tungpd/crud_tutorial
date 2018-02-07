@@ -8,7 +8,12 @@
 	@include('inc.header')
 	<div class="container">
 		<div class="row">
-			<legend class="text-center">Manage Employee</legend>
+			<legend class="text-center">Search Employee</legend>
+			@if(count($employees) ===0)
+				<h5 class="text-center">No results for Name = "<?php echo($Search) ?>"</h5>
+			@elseif(count($employees) >=1 )
+				<h4 class="text-center">Search results for Name = "<?php echo($Search) ?>":</p></h4>
+			@endif
 			@if(session('info'))
 				{{session('info')}}
 			@endif
@@ -46,6 +51,8 @@
 			  	@endif
 			  </tbody>
 			</table>
+
+			<p>About <?php echo(count($employees)) ?> results</p>
 			<!-- <table>
 				<form action="search_code" method="post">
 					<tr>
@@ -60,6 +67,9 @@
 	</div>
 </body>
 </html>
+
+
+
 
 
 <!-- @include('inc.footer') -->
