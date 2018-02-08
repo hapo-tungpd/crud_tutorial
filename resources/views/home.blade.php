@@ -16,6 +16,7 @@
 			  <thead>
 			    <tr>
 			      <th scope="col">ID</th>
+			      <!-- <th scope="col">Avatar</th> -->
 			      <th scope="col">Name</th>
 			      <th scope="col">Age</th>
 			      <th scope="col">Sex</th>
@@ -41,11 +42,13 @@
 				      	<a href='{{url("/update/{$employee->id}")}}' class="badge badge-warning text-center button">Update</a> |
 				      	<a href='{{url("/delete/{$employee->id}")}}' class="badge badge-danger button">Delete</a>
 				      </td>
+
 				    </tr>
 			    	@endforeach
 			  	@endif
 			  </tbody>
 			</table>
+			
 			<!-- <table>
 				<form action="search_code" method="post">
 					<tr>

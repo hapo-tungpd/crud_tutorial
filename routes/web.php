@@ -25,4 +25,7 @@ Route::post('/edit/{id}','CreatesController@edit');
 Route::get('/read/{id}','CreatesController@read');
 Route::get('/delete/{id}','CreatesController@delete');
 Route::post('/search','CreatesController@search');
+Route::get('/profile','CreatesController@profile');
+
+Route::post('upload','UploadController@upload');
 

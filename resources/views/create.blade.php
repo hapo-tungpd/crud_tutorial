@@ -13,6 +13,7 @@
 					{{csrf_field()}}
 				  <fieldset>
 				    <legend class="text-center">Create Employee</legend>
+
 					@if(count($errors) > 0)
 						@foreach($errors->all() as $error)
 							<div class="alert alert-danger">
@@ -33,7 +34,7 @@
 				      	<input type="text" class="form-control" name="age" placeholder="Enter your age">
 				      </div>
 				    </div>
-
+						
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Sex</label>
 				      <div class="col-lg-10">
