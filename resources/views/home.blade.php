@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="{{url('css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url('http://localhost:81/crud_tutorial/public/css/style.css')}}">
 	<title></title>
 </head>
 <body>
@@ -12,11 +12,11 @@
 			@if(session('info'))
 				{{session('info')}}
 			@endif
-			<table class="table table-primary table-hover text-center">
+			<table class="table table-primary table-hover text-center table-home">
 			  <thead>
 			    <tr>
 			      <th scope="col">ID</th>
-			      <!-- <th scope="col">Avatar</th> -->
+			      <th scope="col">Avatar</th>
 			      <th scope="col">Name</th>
 			      <th scope="col">Age</th>
 			      <th scope="col">Sex</th>
@@ -26,11 +26,12 @@
 			      <th scope="col">Action</th>
 			    </tr>
 			  </thead>
-			  <tbody>
+			  <tbody class="aa">
 			  	@if(count($employees) > 0)
 					@foreach($employees ->all() as $employee)
 				    <tr class="table-primary">
 				      <th scope="row">{{ $employee->id }}</th>
+				      <td><img style="width: 30px; height: 30px; border-radius: 50%;" class="img-home" src="http://localhost:81/crud_tutorial/public/img/{{$employee->image}}" alt=""></td>
 				      <td>{{ $employee->name}}</td>
 				      <td>{{ $employee->age}}</td>
 				      <td>{{ $employee->sex}}</td>
@@ -42,27 +43,14 @@
 				      	<a href='{{url("/update/{$employee->id}")}}' class="badge badge-warning text-center button">Update</a> |
 				      	<a href='{{url("/delete/{$employee->id}")}}' class="badge badge-danger button">Delete</a>
 				      </td>
-
 				    </tr>
 			    	@endforeach
 			  	@endif
 			  </tbody>
 			</table>
-			
-			<!-- <table>
-				<form action="search_code" method="post">
-					<tr>
-						<td>Search </td>
-						<td><input type="text" name="search_code"></td>
-						<input type="hidden" name="_token" value="{{{ csrf_token() }}}">
-						<td><input type="submit" name="Submit" value="Search"></td>
-					</tr>
-				</form>
-			</table> -->
 		</div>
 	</div>
+
 </body>
 </html>
-
-
-<!-- @include('inc.footer') -->
+@include('inc.footer')

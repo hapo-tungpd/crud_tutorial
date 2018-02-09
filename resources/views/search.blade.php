@@ -21,6 +21,7 @@
 			  <thead>
 			    <tr>
 			      <th scope="col">ID</th>
+			      <th scope="col">Avatar</th>
 			      <th scope="col">Name</th>
 			      <th scope="col">Age</th>
 			      <th scope="col">Sex</th>
@@ -35,6 +36,7 @@
 					@foreach($employees ->all() as $employee)
 				    <tr class="table-primary">
 				      <th scope="row">{{ $employee->id }}</th>
+				      <td><img style="width: 30px; height: 30px; border-radius: 50%;" class="img-home" src="http://localhost:81/crud_tutorial/public/img/{{$employee->image}}" alt=""></td>
 				      <td>{{ $employee->name}}</td>
 				      <td>{{ $employee->age}}</td>
 				      <td>{{ $employee->sex}}</td>
@@ -51,25 +53,9 @@
 			  	@endif
 			  </tbody>
 			</table>
-
 			<p>About <?php echo(count($employees)) ?> results</p>
-			<!-- <table>
-				<form action="search_code" method="post">
-					<tr>
-						<td>Search </td>
-						<td><input type="text" name="search_code"></td>
-						<input type="hidden" name="_token" value="{{{ csrf_token() }}}">
-						<td><input type="submit" name="Submit" value="Search"></td>
-					</tr>
-				</form>
-			</table> -->
 		</div>
 	</div>
 </body>
 </html>
-
-
-
-
-
-<!-- @include('inc.footer') -->
+@include('inc.footer')

@@ -1,8 +1,12 @@
 #footer {
-	margin-top: 30px;
 	padding: 10px;
 	color: #fff;
 	background: #0c84e4;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  clear: both;
+  position:fixed;
 }
 #footer p {
 	margin-bottom: 0px;
@@ -10,3 +14,47 @@
 .text-update {
 	font-size: 15px;
 }
+.form-create .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding-left: 14px;
+  padding-bottom: 15px;
+}
+.form-create .upload-btn-wrapper .btn-upload {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.form-create .upload-btn-wrapper input {
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.text-home-header {
+  padding-left: 15px;
+  font-size: 25px;
+  margin: auto;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+.text-create-header {
+  padding-left: 15px;
+  font-size: 20px;
+  margin: auto;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.img-header {
+  margin-top: -11px;
+}
+

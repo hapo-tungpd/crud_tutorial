@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<form class="form-horizontal" method="POST" action="{{ url('/insert')}}">
+				<form class="form-horizontal form-create" method="POST" action="{{ url('/insert')}}" enctype="multipart/form-data">
 					{{csrf_field()}}
 				  <fieldset>
 				    <legend class="text-center">Create Employee</legend>
@@ -27,7 +27,7 @@
 				      	<input type="text" class="form-control" name="name" placeholder="Enter your name">
 				      </div>
 				    </div>
-				    
+
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Age</label>
 				      <div class="col-lg-10">
@@ -63,19 +63,10 @@
 				      </div>
 				    </div>
 					
-				    <!-- <div class="form-group">
-				      <label for="inputEmail" class="col-lg-2 control-label">Test1</label>
-				      <div class="col-lg-10">
-				      	<input type="text" class="form-control" id="inputEmail" name="Test1" placeholder="Enter email">
-				      </div>
-				    </div>
-				    
-				    <div class="form-group">
-				      <label for="inputPassword" class="col-lg-2 control-label">Description</label>
-				      <div class="col-lg-10">
-				      	<textarea name="description" class="form-control" placeholder="Description"></textarea>
-				      </div>
-				    </div> -->
+				    <div class="upload-btn-wrapper">
+		  				<button class="btn-upload">Upload avata</button>
+		  				<input type="file" name="avata" style="" />
+					</div>
 
 				    <div class="form-group">
 				    	<div class="col-lg-10 col-lg-offset-2">
@@ -90,4 +81,4 @@
 	</div>
 </body>
 </html>
-<!-- @include('inc.footer') -->
+@include('inc.footer')
