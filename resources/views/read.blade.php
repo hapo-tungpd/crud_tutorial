@@ -3,7 +3,7 @@
 		<legend class="text-center">Read Employee Information</legend>
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<img src="{{ asset('img/'.$employee->image) }}" style="width: 150px; height:150px; float: left; border-radius: 50%; margin-right: 25px">
+				<img class="img-read" src="{{ asset('img/'.$employee->image) }}">
 				{{ csrf_field() }}
 				<h2>{{ $employee->name}}'s Profile</h2>
 			</div>

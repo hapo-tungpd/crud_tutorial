@@ -17,7 +17,7 @@
 			@if(session('info'))
 				{{session('info')}}
 			@endif
-			<table class="table table-primary table-hover text-center">
+			<table class="table table-primary table-hover text-center table-show">
 			  <thead>
 			    <tr>
 			      <th scope="col">ID</th>
@@ -31,12 +31,12 @@
 			      <th scope="col">Action</th>
 			    </tr>
 			  </thead>
-			  <tbody>
+			  <tbody class="tbody-show">
 			  	@if(count($employees) > 0)
-					@foreach($employees ->all() as $employee)
-				    <tr class="table-primary">
+					@foreach($employees as $employee)
+				    <tr class="table-primary tr-show">
 				      <th scope="row">{{ $employee->id }}</th>
-				      <td><img style="width: 30px; height: 30px; border-radius: 50%;" class="img-home" src="{{ asset('img/'.$employee->image) }}" alt=""></td>
+				      <td><img class="img-show" class="img-home" src="{{ asset('img/'.$employee->image) }}" alt=""></td>
 				      <td>{{ $employee->name}}</td>
 				      <td>{{ $employee->age}}</td>
 				      <td>{{ $employee->sex}}</td>

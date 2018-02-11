@@ -26,24 +26,24 @@
 			      <th scope="col">Action</th>
 			    </tr>
 			  </thead>
-			  <tbody class="aa">
+			  <tbody class="tbody-home">
 					@foreach($employee ->all() as $employees)
-				    <tr class="table-primary">
+				    <tr class="table-primary tr-home">
 				      <th scope="row">{{ $employees->id }}</th>
- 							<td><img src="{{ asset('img/'.$employees->image) }}" style="width: 30px; height: 30px; border-radius: 50%;" class="img-home" alt=""></td>
+ 							<td><img src="{{ asset('img/'.$employees->image) }}" class="img-home" alt=""></td>
 				      <td>{{ $employees->name}}</td>
 				      <td>{{ $employees->age}}</td>
 				      <td>{{ $employees->sex}}</td>
 				      <td>{{ $employees->email}}</td>
 				      <td>{{ $employees->phonenumber}}</td>
 				      <td>{{ $employees->skill}}</td>
-				      <td class="group-button">
+				      <td class="group-button td-home">
 				      	<a href="{{ route('employee.show', $employees->id) }}" class="badge badge-primary text-center button">Read</a> |
 				      	<a href="{{ route('employee.edit', $employees->id) }}" class="badge badge-warning text-center button">Update</a> |
 				      	{{ csrf_field() }}
-                {{ method_field('GET') }}
+                		{{ method_field('GET') }}
 				      	<form class="badge badge-danger button text-center" action="{{ route('employee.destroy', $employees->id) }}" method="POST">
-								{{ csrf_field() }}
+						{{ csrf_field() }}
 				      	{{ method_field('DELETE') }}
 				      		<button class="badge badge-danger button text-center">Delete</button>
 				      	</form>

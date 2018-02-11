@@ -14,6 +14,9 @@
 .text-update {
 	font-size: 15px;
 }
+.img-header img{
+  margin-top: -12px;
+}
 .form-create .upload-btn-wrapper {
   position: relative;
   overflow: hidden;
@@ -54,5 +57,21 @@ a {
   color: #FFFFFF;
   text-decoration: none;
 }
-
+.table-home .tbody-home .tr-home .img-home {
+  width: 30px; 
+  height: 30px; 
+  border-radius: 50%;
+}
+.img-read {
+  width: 150px; 
+  height:150px; 
+  float: left; 
+  border-radius: 50%;
+  margin-right: 25px;
+}
+.table-show .tbody-show .tr-show .img-show {
+  width: 30px; 
+  height: 30px; 
+  border-radius: 50%;
+}
 
