@@ -9,17 +9,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<form class="form-horizontal form-create" method="POST" action="{{ url('/insert')}}" enctype="multipart/form-data">
+				<form class="form-horizontal form-create" method="POST" action="{{ route('employee.store') }}" enctype="multipart/form-data">
 					{{csrf_field()}}
 				  <fieldset>
 				    <legend class="text-center">Create Employee</legend>
-
-					@if(count($errors) > 0)
-						@foreach($errors->all() as $error)
-							<div class="alert alert-danger">
-								{{$error}}
-							</div>
-						@endforeach
+					@if ($errors->has('name'))
+						<p class="alert-danger alert text-center">{{ $errors->first('name') }}</p>
 					@endif
 					<div class="form-group">
 				      <label class="col-lg-2 control-label">Name</label>
@@ -27,50 +22,58 @@
 				      	<input type="text" class="form-control" name="name" placeholder="Enter your name">
 				      </div>
 				    </div>
-
+					@if ($errors->has('age'))
+						<p class="alert-danger alert text-center">{{ $errors->first('age') }}</p>
+					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Age</label>
 				      <div class="col-lg-10">
 				      	<input type="text" class="form-control" name="age" placeholder="Enter your age">
 				      </div>
 				    </div>
-						
+					@if ($errors->has('sex'))
+						<p class="alert-danger alert text-center">{{ $errors->first('sex') }}</p>
+					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Sex</label>
 				      <div class="col-lg-10">
 				      	<input type="text" class="form-control" name="sex" placeholder="Enter your sex">
 				      </div>
 				    </div>
-
+					@if ($errors->has('email'))
+						<p class="alert-danger alert text-center">{{ $errors->first('email') }}</p>
+					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Email</label>
 				      <div class="col-lg-10">
 				      	<input type="text" class="form-control" name="email" placeholder="Enter your email">
 				      </div>
 				    </div>
-
+					@if ($errors->has('phonenumber'))
+						<p class="alert-danger alert text-center">{{ $errors->first('phonenumber') }}</p>
+					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Phone number</label>
 				      <div class="col-lg-10">
 				      	<input type="text" class="form-control" name="phonenumber" placeholder="Enter your phone">
 				      </div>
 				    </div>
-
+					@if ($errors->has('skill'))
+						<p class="alert-danger alert text-center">{{ $errors->first('skill') }}</p>
+					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Skill</label>
 				      <div class="col-lg-10">
 				      	<input type="text" class="form-control" name="skill" placeholder="Enter your skill">
 				      </div>
 				    </div>
-					
 				    <div class="upload-btn-wrapper">
 		  				<button class="btn-upload">Upload avata</button>
 		  				<input type="file" name="avata" style="" />
 					</div>
-
 				    <div class="form-group">
 				    	<div class="col-lg-10 col-lg-offset-2">
-				    		<a href="{{ url('/')}}" class="btn btn-primary">Back</a>
+				    		<a href="{{ route('employee.index') }}" class="btn btn-primary">Back</a>
 				    		<button type="submit" class="btn btn-primary">Submit</button>
 				    	</div>
 				    </div>

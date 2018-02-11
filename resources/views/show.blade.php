@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="{{url('css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 	<title></title>
 </head>
 <body>
@@ -36,7 +36,7 @@
 					@foreach($employees ->all() as $employee)
 				    <tr class="table-primary">
 				      <th scope="row">{{ $employee->id }}</th>
-				      <td><img style="width: 30px; height: 30px; border-radius: 50%;" class="img-home" src="http://localhost:81/crud_tutorial/public/img/{{$employee->image}}" alt=""></td>
+				      <td><img style="width: 30px; height: 30px; border-radius: 50%;" class="img-home" src="{{ asset('img/'.$employee->image) }}" alt=""></td>
 				      <td>{{ $employee->name}}</td>
 				      <td>{{ $employee->age}}</td>
 				      <td>{{ $employee->sex}}</td>
@@ -44,9 +44,15 @@
 				      <td>{{ $employee->phonenumber}}</td>
 				      <td>{{ $employee->skill}}</td>
 				      <td class="group-button">
-				      	<a href='{{url("/read/{$employee->id}")}}' class="badge badge-primary text-center button">Read</a> |
-				      	<a href='{{url("/update/{$employee->id}")}}' class="badge badge-warning text-center button">Update</a> |
-				      	<a href='{{url("/delete/{$employee->id}")}}' class="badge badge-danger button">Delete</a>
+				      	<a href="{{ route('employee.show', $employee->id) }}" class="badge badge-primary text-center button">Read</a> |
+				      	<a href="{{ route('employee.edit', $employee->id) }}" class="badge badge-warning text-center button">Update</a> |
+				      	{{ csrf_field() }}
+                		{{ method_field('GET') }}
+				      	<form class="badge badge-danger button text-center" action="{{ route('employee.destroy', $employee->id) }}" method="POST">
+						{{ csrf_field() }}
+				      	{{ method_field('DELETE') }}
+				      		<button class="badge badge-danger button text-center">Delete</button>
+				      	</form>
 				      </td>
 				    </tr>
 			    	@endforeach
