@@ -24,7 +24,7 @@ class StoreRequests extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255|min:6|regex: /^[\p{L}\s\'.-]+$/',
+            'name' => 'required|max:255|min:6',
             'age' => 'required',
             'sex' => 'required',
             'phonenumber'=> 'max:11|min:10',
@@ -37,7 +37,6 @@ class StoreRequests extends FormRequest
     {
         return [
             'required' => 'Trường :attribute bắt buộc nhập.',
-            'regex' => 'Trường :attribute không được có số và ký tự đặc biệt.',
             'unique' => 'Trường :attribute không được trùng.',
             'max'    => 'Trường :attribute vượt quá 255 ký tự.',
             'name.min' => 'Trường :attribute tối thiểu 6 ký tự.',

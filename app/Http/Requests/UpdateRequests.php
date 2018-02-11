@@ -24,7 +24,7 @@ class UpdateRequests extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255|min:6|regex: /^[\p{L}\s\'.-]+$/',
+            'name' => 'required|max:255',
             'age' => 'required',
             'sex' => 'required',
             'phonenumber'=> 'max:11|min:10',
@@ -37,7 +37,6 @@ class UpdateRequests extends FormRequest
     {
         return [
             'max'    => 'Trường :attribute vượt quá 255 ký tự.',
-            'regex' => 'Trường :attribute không được có số và ký tự đặc biệt.',
             'name.min' => 'Trường :attribute tối thiểu 6 ký tự.',
             'phonenumber.max' =>'Trường :attribute không được quá 11 số.',
             'phonenumber.min'   => 'Trường :attribute tối thiểu 10 số.',

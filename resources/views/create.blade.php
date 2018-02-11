@@ -37,7 +37,13 @@
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Sex</label>
 				      <div class="col-lg-10">
-				      	<input type="text" class="form-control" name="sex" placeholder="Enter your sex">
+				      	<div>
+						  <select class="form-control" name="sex">
+						    <option>Không xác định</option>
+						    <option>Nam</option>
+						    <option>Nữ</option>
+						  </select>
+						</div>
 				      </div>
 				    </div>
 					@if ($errors->has('email'))

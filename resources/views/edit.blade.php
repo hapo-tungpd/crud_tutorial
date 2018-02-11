@@ -37,7 +37,13 @@
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label text-update">Sex</label>
 				      <div class="col-lg-10">
-				      	<input value="{{ $employees->sex }}" type="text" class="form-control" id="inputEmail" name="sex" placeholder="Enter your sex">
+				      	<div>
+						  <select class="form-control" name="sex">
+						    <option>Không xác định</option>
+						    <option>Nam</option>
+						    <option>Nữ</option>
+						  </select>
+						</div>
 				      </div>
 				    </div>
 				    <div class="form-group">
