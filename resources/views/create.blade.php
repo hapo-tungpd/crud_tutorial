@@ -11,7 +11,7 @@
 			<div class="col-md-12">
 				<form class="form-horizontal form-create" method="POST" action="{{ route('employee.store') }}" enctype="multipart/form-data">
 					{{csrf_field()}}
-				  <fieldset>
+				  <fieldset class="fieldset-create">
 				    <legend class="text-center">Create Employee</legend>
 					@if ($errors->has('name'))
 						<p class="alert-danger alert text-center">{{ $errors->first('name') }}</p>
@@ -34,16 +34,14 @@
 					@if ($errors->has('sex'))
 						<p class="alert-danger alert text-center">{{ $errors->first('sex') }}</p>
 					@endif
-				    <div class="form-group">
+				    <div class="form-group form-group-select">
 				      <label class="col-lg-2 control-label">Sex</label>
-				      <div class="col-lg-10">
-				      	<div>
-						  <select class="form-control" name="sex">
+				      <div class="col-lg-10 div-select">
+						  <select class="form-control select-create" name="sex">
 						    <option>Không xác định</option>
 						    <option>Nam</option>
 						    <option>Nữ</option>
 						  </select>
-						</div>
 				      </div>
 				    </div>
 					@if ($errors->has('email'))

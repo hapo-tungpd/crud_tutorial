@@ -46,7 +46,7 @@ class EmployeesController extends Controller
         $request->session()->flash('success', "Employee Save Successfully!");
         return redirect()->route('employee.index');
     }
-
+    
     public function search(Request $request)
     {
         $Search = $request->search_code; //get data from FORM
@@ -84,11 +84,14 @@ class EmployeesController extends Controller
 
     public function destroy($id)
     {
+        $name_img=Employee::findOrFail($id);
+        if($name_img->image != "" && file_exists('img/'.$name_img->image)){
+            unlink('img/'.$name_img->image);
+        }
         Employee::findOrFail($id)->delete();
         return redirect()->route('employee.index')->with('success', "Xóa thành công !");
 
     }
-    
     //show list search employee
     public function show($id)
     {
