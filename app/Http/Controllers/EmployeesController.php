@@ -89,7 +89,7 @@ class EmployeesController extends Controller
             unlink('img/'.$name_img->image);
         }
         Employee::findOrFail($id)->delete();
-        return redirect()->route('employee.index')->with('success', "Xóa thành công !");
+        return redirect()->route('employee.index')->with('success', "Delete Employee Successfully!");
 
     }
     //show list search employee

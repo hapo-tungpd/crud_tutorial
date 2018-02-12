@@ -14,7 +14,7 @@
 				  <fieldset class="fieldset-create">
 				    <legend class="text-center">Create Employee</legend>
 					@if ($errors->has('name'))
-						<p class="alert-danger alert text-center">{{ $errors->first('name') }}</p>
+						<p class="notification">{{ $errors->first('name') }}</p>
 					@endif
 					<div class="form-group">
 				      <label class="col-lg-2 control-label">Name</label>
@@ -23,7 +23,7 @@
 				      </div>
 				    </div>
 					@if ($errors->has('age'))
-						<p class="alert-danger alert text-center">{{ $errors->first('age') }}</p>
+						<p class="notification">{{ $errors->first('age') }}</p>
 					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Age</label>
@@ -32,7 +32,7 @@
 				      </div>
 				    </div>
 					@if ($errors->has('sex'))
-						<p class="alert-danger alert text-center">{{ $errors->first('sex') }}</p>
+						<p class="notification">{{ $errors->first('sex') }}</p>
 					@endif
 				    <div class="form-group form-group-select">
 				      <label class="col-lg-2 control-label">Sex</label>
@@ -45,7 +45,7 @@
 				      </div>
 				    </div>
 					@if ($errors->has('email'))
-						<p class="alert-danger alert text-center">{{ $errors->first('email') }}</p>
+						<p class="notification">{{ $errors->first('email') }}</p>
 					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Email</label>
@@ -54,7 +54,7 @@
 				      </div>
 				    </div>
 					@if ($errors->has('phonenumber'))
-						<p class="alert-danger alert text-center">{{ $errors->first('phonenumber') }}</p>
+						<p class="notification">{{ $errors->first('phonenumber') }}</p>
 					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Phone number</label>
@@ -63,14 +63,17 @@
 				      </div>
 				    </div>
 					@if ($errors->has('skill'))
-						<p class="alert-danger alert text-center">{{ $errors->first('skill') }}</p>
+						<p class="notification">{{ $errors->first('skill') }}</p>
 					@endif
 				    <div class="form-group">
 				      <label class="col-lg-2 control-label">Skill</label>
 				      <div class="col-lg-10">
-				      	<input type="text" class="form-control" name="skill" placeholder="Enter your skill">
+				      	<textarea type="text" class="form-control" name="skill" placeholder="Enter your skill"></textarea>
 				      </div>
 				    </div>
+				    @if ($errors->has('image'))
+						<p class="notification">{{ $errors->first('image') }}</p>
+					@endif
 				    <div class="upload-btn-wrapper">
 		  				<button class="btn-upload">Upload avata</button>
 		  				<input type="file" name="avata" style="" />

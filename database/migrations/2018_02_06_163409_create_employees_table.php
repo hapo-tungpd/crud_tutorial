@@ -20,7 +20,7 @@ class CreateEmployeesTable extends Migration
             $table->string('sex');
             $table->string('email');
             $table->integer('phonenumber');
-            $table->string('skill');
+            $table->text('skill');
             $table->text('image');
             $table->timestamps();
         });
