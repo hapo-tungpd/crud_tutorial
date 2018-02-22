@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequests extends FormRequest
+class UpdateEmployeeRequests extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,18 +30,6 @@ class UpdateRequests extends FormRequest
             'phonenumber'=> 'required',
             'image' => 'image',
             'skill' => 'nullable',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'name.max'    => 'Trường :attribute vượt quá 255 ký tự.',
-            'name.min' => 'Trường :attribute tối thiểu 6 ký tự.',
-            'image' => 'Trường :attribute nhập không đúng định dạng ảnh(jpeg, png, bmp, gif, or svg).',
-            'numeric' => 'Trường: attribute phải là số.',
-            'age.max' => 'Hãy nhập đúng số tuổi!',
-            'age.min' => 'Hãy nhập đúng số tuổi!',
         ];
     }
 }

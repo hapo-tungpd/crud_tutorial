@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequests extends FormRequest
+class StoreEmployeeRequests extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,20 +31,6 @@ class StoreRequests extends FormRequest
             'email'=>'required|unique:employees|email',
             'image' => 'nullable|image',
             'skill' => 'nullable',
-        ];
-    }
-    public function messages()
-    {
-        return [
-            'required' => 'Trường :attribute bắt buộc nhập.',
-            'unique' => 'Trường :attribute không được trùng.',
-            'name.max'    => 'Trường :attribute vượt quá 255 ký tự.',
-            'name.min' => 'Trường :attribute tối thiểu 6 ký tự.',
-            'image.image' => 'Trường :attribute không phải là ảnh',
-            'numeric' => 'Trường: attribute phải là số.',
-            'age.max' => 'Hãy nhập đúng số tuổi!',
-            'age.min' => 'Hãy nhập đúng số tuổi!',
-            'skill.nullable' => 'dfdfffđfd',
         ];
     }
 }

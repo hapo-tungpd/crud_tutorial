@@ -12,8 +12,8 @@ use File;
 use Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\StoreRequests;
-use App\Http\Requests\UpdateRequests;
+use App\Http\Requests\StoreEmployeeRequests;
+use App\Http\Requests\UpdateEmployeeRequests;
 
 class EmployeesController extends Controller
 {
@@ -28,7 +28,7 @@ class EmployeesController extends Controller
         return view('create');
     }
 
-    public function store(StoreRequests $request)
+    public function store(StoreEmployeeRequests $request)
     {
         $employees = new Employee();
         if ($request->hasFile('avata')) {
@@ -43,7 +43,7 @@ class EmployeesController extends Controller
         $employees->phonenumber = $request->input('phonenumber');
         $employees->skill = $request->input('skill');
         $employees->save();
-        $request->session()->flash('success', "Employee Save Successfully!");
+        $request->session()->flash('success', trans_choice('mesage.status', 1));
         return redirect()->route('employee.index');
     }
     
@@ -60,7 +60,7 @@ class EmployeesController extends Controller
         return view('edit', ['employees' => $employees]);
     }
 
-    public function update(UpdateRequests $request, $id)
+    public function update(UpdateEmployeeRequests $request, $id)
     {
         $employees = Employee::findOrFail($id);
         if($request->hasFile('avata')) {
@@ -78,7 +78,7 @@ class EmployeesController extends Controller
         $employees->phonenumber = $request->input('phonenumber');
         $employees->skill = $request->input('skill');
         $employees->save();
-        $request->session()->flash('success', "Employee Update Successfully!");
+        $request->session()->flash('success', trans_choice('mesage.status', 2));
         return redirect()->route('employee.index');
     }
 
@@ -89,7 +89,7 @@ class EmployeesController extends Controller
             unlink('img/'.$name_img->image);
         }
         Employee::findOrFail($id)->delete();
-        return redirect()->route('employee.index')->with('success', "Delete Employee Successfully!");
+        return redirect()->route('employee.index')->with('success', trans_choice('mesage.status', 3));
 
     }
     //show list search employee

@@ -103,6 +103,23 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'name' => [
+            'required' => 'Trường :attribute bắt buộc nhập.fuckk',
+            'max' => 'Trường :attribute vượt quá 255 ký tự.',
+            'min' => 'Trường :attribute tối thiểu 6 ký tự.',
+            'regex' => 'Trường :attribute không được có số và ký tự đặc biệt.',
+        ],
+        'phonenumber' => [
+            'max' => 'Trường :attribute không được quá 11 số.',
+            'min' => 'Trường :attribute tối thiểu 10 số.',
+        ],
+        'email' => [
+            'unique' => 'Trường :attribute không được trùng.',
+            'email' => 'Trường :attribute đúng định dạng email.',
+        ],
+        'image' => [
+            'image' => 'Trường :attribute nhập không đúng định dạng ảnh(jpeg, png, bmp, gif, or svg).',
+        ],
     ],
 
     /*
